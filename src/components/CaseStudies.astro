@@ -1,0 +1,170 @@
+---
+// CaseStudies.astro - Case Studies adhering to DESIGN.md Category Card specs
+---
+
+<section id="case-studies" class="py-24 bg-white text-[#171A20] scroll-mt-20">
+  <div class="max-w-[1380px] mx-auto px-6">
+    <!-- Header Block -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div class="max-w-[800px]">
+        <span class="text-[12px] font-medium tracking-[0.2em] text-[#3E6AE1] uppercase block mb-2">
+          Verified Performance
+        </span>
+        <h2 class="text-[32px] md:text-[38px] font-medium leading-[1.2] text-[#171A20] text-balance">
+          Case Studies in Algorithmic Dominance
+        </h2>
+        <p class="mt-4 text-[15px] text-[#5C5E62] leading-[1.6] text-pretty">
+          Every campaign we engineer is benchmarked against hard pipeline revenue, lower acquisition costs, and compounding brand equity.
+        </p>
+      </div>
+      <div>
+        <button
+          type="button"
+          data-open-audit
+          class="btn-secondary text-[14px]"
+        >
+          View All Performance Logs
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Cards Layout (Large Feature + 2-up Grid) conforming to DESIGN.md -->
+    <div class="space-y-8">
+      <!-- Case 1: Large Featured Card -->
+      <div class="relative rounded-[12px] overflow-hidden bg-[#171A20] text-white min-h-[480px] md:min-h-[560px] flex flex-col justify-end p-8 md:p-14 group">
+        <!-- Background Imagery -->
+        <img
+          src="/images/tech.jpg"
+          alt="Aura Labs Smart Control Launch Campaign"
+          width="1920"
+          height="1080"
+          loading="lazy"
+          class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.65] contrast-[1.05] transition-transform duration-[600ms] group-hover:scale-[1.02]"
+        />
+        <!-- Vignette Layer -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#171A20] via-[#171A20]/40 to-transparent"></div>
+
+        <!-- Content Overlay -->
+        <div class="relative z-10 max-w-[820px]">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class="bg-white/15 backdrop-blur-md px-3 py-1 rounded-[4px] text-[12px] font-medium tracking-wide text-white uppercase">
+              Consumer Hardware & D2C
+            </span>
+            <span class="text-white/70 text-[13px] font-mono">
+              TikTok Spark Ads &bull; Meta Retargeting &bull; YouTube Shorts
+            </span>
+          </div>
+
+          <h3 class="text-[28px] sm:text-[36px] font-medium leading-[1.2] text-white mb-4">
+            Aura Robotics: Scaling from $80K to $1.4M/mo in 120 Days
+          </h3>
+
+          <p class="text-[15px] text-white/80 leading-[1.6] mb-8 max-w-[680px]">
+            By replacing standard studio ads with our 3-second modular hook testing system and whitelisted creator Spark Ads, Aura decreased their customer acquisition cost by 46% while achieving a 4.2x ROAS across 18 countries.
+          </p>
+
+          <!-- Key Metrics Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/20">
+            <div>
+              <span class="text-[24px] font-medium text-white tabular-nums">4.2x</span>
+              <span class="block text-[11px] text-white/60 uppercase tracking-wider mt-0.5">Blended ROAS</span>
+            </div>
+            <div>
+              <span class="text-[24px] font-medium text-white tabular-nums">-46.2%</span>
+              <span class="block text-[11px] text-white/60 uppercase tracking-wider mt-0.5">CAC Reduction</span>
+            </div>
+            <div>
+              <span class="text-[24px] font-medium text-white tabular-nums">38.4M</span>
+              <span class="block text-[11px] text-white/60 uppercase tracking-wider mt-0.5">Engaged Views</span>
+            </div>
+            <div>
+              <span class="text-[24px] font-medium text-white tabular-nums">$5.8M</span>
+              <span class="block text-[11px] text-white/60 uppercase tracking-wider mt-0.5">Tracked Sales</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-up Cards Grid below large feature -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Case 2: Vanguard Haute Couture -->
+        <div class="relative rounded-[12px] overflow-hidden bg-[#171A20] text-white min-h-[440px] flex flex-col justify-end p-8 md:p-10 group">
+          <img
+            src="/images/lifestyle.jpg"
+            alt="Vanguard Atelier Luxury Campaign"
+            width="1920"
+            height="1080"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.6] contrast-[1.05] transition-transform duration-[600ms] group-hover:scale-[1.02]"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#171A20] via-[#171A20]/40 to-transparent"></div>
+
+          <div class="relative z-10">
+            <span class="inline-block bg-white/15 backdrop-blur-md px-3 py-1 rounded-[4px] text-[12px] font-medium text-white uppercase mb-3">
+              Luxury Lifestyle & Fashion
+            </span>
+            <h3 class="text-[24px] font-medium text-white mb-2">
+              Vanguard Atelier: 64M Viral Organic Surge Without Brand Dilution
+            </h3>
+            <p class="text-[14px] text-white/80 leading-[1.5] mb-6">
+              Engineered high-aesthetic cinematic storytelling on Instagram Reels and TikTok, driving waitlist signups for exclusive private drops.
+            </p>
+            <div class="flex items-center gap-6 pt-4 border-t border-white/20">
+              <div>
+                <span class="text-[20px] font-medium text-white tabular-nums">64.2M</span>
+                <span class="block text-[11px] text-white/60 uppercase mt-0.5">Organic Reach</span>
+              </div>
+              <div>
+                <span class="text-[20px] font-medium text-white tabular-nums">14.8x</span>
+                <span class="block text-[11px] text-white/60 uppercase mt-0.5">Follower Growth</span>
+              </div>
+              <div>
+                <span class="text-[20px] font-medium text-white tabular-nums">94%</span>
+                <span class="block text-[11px] text-white/60 uppercase mt-0.5">Drop Sellout Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 3: Enterprise B2B SaaS -->
+        <div class="relative rounded-[12px] overflow-hidden bg-[#171A20] text-white min-h-[440px] flex flex-col justify-end p-8 md:p-10 group">
+          <img
+            src="/images/production.jpg"
+            alt="Synthetix Enterprise Media Production"
+            width="1920"
+            height="1080"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.55] contrast-[1.05] transition-transform duration-[600ms] group-hover:scale-[1.02]"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#171A20] via-[#171A20]/40 to-transparent"></div>
+
+          <div class="relative z-10">
+            <span class="inline-block bg-white/15 backdrop-blur-md px-3 py-1 rounded-[4px] text-[12px] font-medium text-white uppercase mb-3">
+              Enterprise B2B SaaS
+            </span>
+            <h3 class="text-[24px] font-medium text-white mb-2">
+              Synthetix AI: $18.4M Qualified Pipeline via Founder-Led LinkedIn
+            </h3>
+            <p class="text-[14px] text-white/80 leading-[1.5] mb-6">
+              Transformed CEO and CTO profiles into the go-to technical voices in enterprise AI, driving 1,420 demo requests from Fortune 500 decision makers.
+            </p>
+            <div class="flex items-center gap-6 pt-4 border-t border-white/20">
+              <div>
+                <span class="text-[20px] font-medium text-white tabular-nums">$18.4M</span>
+                <span class="block text-[11px] text-white/60 uppercase mt-0.5">Pipeline Value</span>
+              </div>
+              <div>
+                <span class="text-[20px] font-medium text-white tabular-nums">1,420</span>
+                <span class="block text-[11px] text-white/60 uppercase mt-0.5">Demo Bookings</span>
+              </div>
+              <div>
+                <span class="text-[20px] font-medium text-white tabular-nums">5.1x</span>
+                <span class="block text-[11px] text-white/60 uppercase mt-0.5">Deal Velocity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

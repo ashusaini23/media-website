@@ -1,0 +1,155 @@
+---
+// Navigation.astro - Conforming to DESIGN.md navigation spec
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-[330ms] ease-out bg-transparent text-white">
+  <div class="max-w-[1380px] mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+    <!-- Brand Wordmark conforming to DESIGN.md -->
+    <a href="#" class="text-[17px] md:text-[18px] font-medium tracking-[0.22em] uppercase hover:opacity-85 transition-opacity focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none rounded-[2px]" aria-label="VALENCE Home">
+      V&nbsp;A&nbsp;L&nbsp;E&nbsp;N&nbsp;C&nbsp;E
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center gap-1.5" aria-label="Main Navigation">
+      <a href="#services" class="nav-link-dynamic text-[14px] font-medium px-4 py-1.5 rounded-[4px] transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
+        Services
+      </a>
+      <a href="#platforms" class="nav-link-dynamic text-[14px] font-medium px-4 py-1.5 rounded-[4px] transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
+        Platforms
+      </a>
+      <a href="#about" class="nav-link-dynamic text-[14px] font-medium px-4 py-1.5 rounded-[4px] transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
+        About
+      </a>
+      <a href="#contact" class="nav-link-dynamic text-[14px] font-medium px-4 py-1.5 rounded-[4px] transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
+        Contact
+      </a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="hidden md:flex items-center gap-4">
+      <a
+        href="#contact"
+        class="text-[14px] font-medium text-white/80 hover:text-white transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none"
+      >
+        Inquiries
+      </a>
+      <button
+        type="button"
+        data-open-audit
+        class="btn-primary text-[14px] font-medium !h-9 !px-5 !py-1 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
+        aria-label="Get Started with VALENCE"
+      >
+        Get Started
+      </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-toggle"
+      type="button"
+      class="md:hidden flex items-center justify-center w-10 h-10 rounded-[4px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none text-current"
+      aria-expanded="false"
+      aria-label="Toggle Navigation Menu"
+      aria-controls="mobile-menu"
+    >
+      <svg id="menu-icon-bars" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="6" x2="20" y2="6"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="18" x2="20" y2="18"></line>
+      </svg>
+      <svg id="menu-icon-close" class="w-6 h-6 stroke-current hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Drawer -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden bg-white/98 backdrop-blur-md border-b border-[#EEEEEE] text-[#171A20] px-6 py-6 space-y-4 shadow-sm"
+  >
+    <nav class="flex flex-col space-y-3" aria-label="Mobile Navigation">
+      <a href="#services" class="mobile-link text-[15px] font-medium py-2 text-[#171A20] border-b border-[#EEEEEE]/60">
+        Services
+      </a>
+      <a href="#platforms" class="mobile-link text-[15px] font-medium py-2 text-[#171A20] border-b border-[#EEEEEE]/60">
+        Platforms
+      </a>
+      <a href="#about" class="mobile-link text-[15px] font-medium py-2 text-[#171A20] border-b border-[#EEEEEE]/60">
+        About
+      </a>
+      <a href="#contact" class="mobile-link text-[15px] font-medium py-2 text-[#171A20] border-b border-[#EEEEEE]/60">
+        Contact
+      </a>
+    </nav>
+    <div class="pt-2 flex flex-col gap-2.5">
+      <button
+        type="button"
+        data-open-audit
+        class="btn-primary w-full justify-center !h-10 text-[14px]"
+      >
+        Get Started
+      </button>
+      <a
+        href="#contact"
+        class="btn-secondary w-full justify-center !h-10 text-[14px] text-center"
+      >
+        Direct Consultation
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Navigation scroll observer and mobile toggle logic
+  const header = document.getElementById('site-header');
+  const mobileToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIconBars = document.getElementById('menu-icon-bars');
+  const menuIconClose = document.getElementById('menu-icon-close');
+  const dynamicLinks = document.querySelectorAll('.nav-link-dynamic');
+
+  let isScrolled = false;
+
+  function updateNavStyle() {
+    const scrollY = window.scrollY;
+    if (scrollY > 50 && !isScrolled) {
+      isScrolled = true;
+      header?.classList.remove('bg-transparent', 'text-white');
+      header?.classList.add('bg-white/85', 'backdrop-blur-md', 'text-[#171A20]', 'border-b', 'border-[#EEEEEE]');
+      dynamicLinks.forEach(link => {
+        link.classList.remove('hover:bg-white/10');
+        link.classList.add('hover:bg-black/5');
+      });
+    } else if (scrollY <= 50 && isScrolled) {
+      isScrolled = false;
+      header?.classList.remove('bg-white/85', 'backdrop-blur-md', 'text-[#171A20]', 'border-b', 'border-[#EEEEEE]');
+      header?.classList.add('bg-transparent', 'text-white');
+      dynamicLinks.forEach(link => {
+        link.classList.remove('hover:bg-black/5');
+        link.classList.add('hover:bg-white/10');
+      });
+    }
+  }
+
+  window.addEventListener('scroll', updateNavStyle, { passive: true });
+  updateNavStyle();
+
+  mobileToggle?.addEventListener('click', () => {
+    const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+    mobileToggle.setAttribute('aria-expanded', String(!isExpanded));
+    mobileMenu?.classList.toggle('hidden');
+    menuIconBars?.classList.toggle('hidden');
+    menuIconClose?.classList.toggle('hidden');
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuIconBars?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+      mobileToggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

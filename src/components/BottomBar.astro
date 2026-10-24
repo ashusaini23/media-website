@@ -1,0 +1,132 @@
+---
+// BottomBar.astro - Persistent Chat / Audit Bar conforming to DESIGN.md Section 4
+---
+
+<aside
+  id="persistent-bottom-bar"
+  class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#EEEEEE] py-2.5 px-4 sm:px-8 shadow-sm transition-transform duration-[330ms]"
+  aria-label="Quick Question and Strategy Booking Bar"
+>
+  <div class="max-w-[1380px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+    <!-- Left Input / Quick Inquiry Interface -->
+    <div class="w-full sm:w-auto flex-1 max-w-[680px] flex items-center gap-2">
+      <div class="relative w-full flex items-center">
+        <!-- Chat Icon -->
+        <span class="absolute left-3.5 text-[#5C5E62] pointer-events-none" aria-hidden="true">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+          </svg>
+        </span>
+
+        <input
+          id="quick-query-input"
+          type="text"
+          placeholder="Ask a strategist (e.g., 'How do celebrity giveaways work?')"
+          class="w-full h-10 pl-10 pr-10 text-[13px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none sm:max-w-[680px]"
+          aria-label="Ask a question about your social media growth"
+        />
+
+        <!-- Send Icon Button -->
+        <button
+          id="send-query-btn"
+          type="button"
+          class="absolute right-2 text-[#5C5E62] hover:text-[#3E6AE1] transition-colors p-1 rounded-[4px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
+          aria-label="Submit Question"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Side CTA Group -->
+    <div class="flex items-center gap-2.5 w-full sm:w-auto justify-end">
+      <button
+        type="button"
+        data-open-audit
+        class="btn-primary text-[13px] font-medium !h-9 !px-4 flex items-center gap-2 whitespace-nowrap focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
+      >
+        <span class="w-2 h-2 rounded-full bg-white animate-pulse" aria-hidden="true"></span>
+        Get Started Today
+      </button>
+
+      <!-- Minimize Toggle -->
+      <button
+        id="dismiss-bar-btn"
+        type="button"
+        class="hidden sm:flex text-[#8E8E8E] hover:text-[#171A20] p-1.5 rounded-[4px] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
+        aria-label="Hide Bottom Bar"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive Live Answer Tooltip / Notification -->
+  <div
+    id="quick-answer-box"
+    class="hidden max-w-[1380px] mx-auto mt-2 pt-2 border-t border-[#EEEEEE] text-[13px] text-[#393C41] flex items-center justify-between"
+    aria-live="polite"
+  >
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-[#3E6AE1]" aria-hidden="true"></span>
+      <span id="quick-answer-text">Based on your industry benchmarks, brands scaling with our hook testing framework achieve a median 3.6x ROAS in 60 days.</span>
+    </div>
+    <button
+      id="close-answer-btn"
+      type="button"
+      class="text-[#8E8E8E] hover:text-[#171A20] text-[11px] underline ml-4"
+    >
+      Dismiss
+    </button>
+  </div>
+</aside>
+
+<script>
+  const bar = document.getElementById('persistent-bottom-bar');
+  const dismissBtn = document.getElementById('dismiss-bar-btn');
+  const queryInput = document.getElementById('quick-query-input') as HTMLInputElement;
+  const sendBtn = document.getElementById('send-query-btn');
+  const answerBox = document.getElementById('quick-answer-box');
+  const answerText = document.getElementById('quick-answer-text');
+  const closeAnswerBtn = document.getElementById('close-answer-btn');
+
+  dismissBtn?.addEventListener('click', () => {
+    bar?.classList.add('translate-y-full');
+  });
+
+  function handleQuery() {
+    const q = queryInput?.value.trim().toLowerCase();
+    if (!q) return;
+
+    if (answerBox && answerText) {
+      answerBox.classList.remove('hidden');
+      if (q.includes('tiktok') || q.includes('reels')) {
+        answerText.textContent = 'TikTok & Reels: Our clients see 48% average 3-second hook retention and a 42% lower CPA compared to static meta ads.';
+      } else if (q.includes('price') || q.includes('cost') || q.includes('tier')) {
+        answerText.textContent = 'VALENCE tiers start at $4,800/mo for high-velocity creative testing, backed by our 60-day ROAS guarantee.';
+      } else if (q.includes('linkedin') || q.includes('b2b')) {
+        answerText.textContent = 'LinkedIn B2B: Executive thought leadership generates an average $62k ACV in our pipeline programs.';
+      } else {
+        answerText.textContent = `Analyzing "${queryInput.value}": Our senior media architect can break this down in detail during your free 20-min strategy briefing.`;
+      }
+    }
+  }
+
+  sendBtn?.addEventListener('click', handleQuery);
+  queryInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleQuery();
+    }
+  });
+
+  closeAnswerBtn?.addEventListener('click', () => {
+    answerBox?.classList.add('hidden');
+  });
+</script>

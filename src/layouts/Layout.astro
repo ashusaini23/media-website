@@ -1,23 +1,57 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'VALENCE | Social Media Growth and Management Expert',
+	description = 'We help category-defining brands, creators, and entrepreneurs grow and manage their social media through high-impact creator partnerships and full channel management.'
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="VALENCE, Social Media Growth, Influencer Partnerships, Celebrity Giveaways, Instagram Management, YouTube Management, digital media studio" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://valence.media" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://valence.media" />
+		<meta property="og:site_name" content="VALENCE Media" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/images/hero.jpg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="/images/hero.jpg" />
+
+		<!-- Typography preconnect -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+		<!-- Global Stylesheet -->
+		<link rel="stylesheet" href="/src/styles/global.css" />
 	</head>
-	<body>
+	<body class="bg-white text-[#171A20] antialiased selection:bg-[#3E6AE1] selection:text-white pb-20">
+		<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#3E6AE1] focus:text-white focus:rounded-[4px] focus:outline-none">
+			Skip to main content
+		</a>
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

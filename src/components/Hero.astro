@@ -1,0 +1,87 @@
+---
+// Hero.astro - Full-viewport hero for VALENCE conforming to DESIGN.md
+---
+
+<section class="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-[#171A20] text-white">
+  <!-- Cinematic Full-Bleed Background Photography -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/images/hero.jpg"
+      alt="VALENCE Creative & Social Media Growth Studio"
+      width="1920"
+      height="1080"
+      fetchpriority="high"
+      class="w-full h-full object-cover object-center filter brightness-[0.70] contrast-[1.05]"
+    />
+    <!-- Subtle gradient to guarantee text contrast -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#171A20] via-[#171A20]/35 to-[#171A20]/60"></div>
+  </div>
+
+  <!-- Top spacing cushion for fixed navigation -->
+  <div class="h-16 sm:h-20 w-full relative z-10"></div>
+
+    <!-- Center Content Block -->
+    <div class="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 text-center my-auto py-12 flex flex-col items-center">
+    <!-- Restrained Micro Badge -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-white/10 backdrop-blur-md border border-white/15 text-[12px] font-medium tracking-wide uppercase text-white mb-6">
+      <span class="w-2 h-2 rounded-full bg-[#3E6AE1] animate-pulse" aria-hidden="true"></span>
+      Social Media Growth &amp; Management Expert
+    </div>
+
+    <!-- Hero Title conforming to 40px Display font weight 500 -->
+    <h1 class="text-[34px] sm:text-[42px] md:text-[50px] font-medium leading-[1.18] tracking-normal max-w-[960px] text-white text-balance">
+      We Help Business to Grow and Manage Their Social Media
+    </h1>
+
+    <!-- Subtitle conforming to 14px-16px Text font -->
+    <p class="mt-4 text-[15px] sm:text-[17px] font-normal leading-[1.6] text-white/85 max-w-[700px] text-pretty">
+      Unlock your social potential with high-impact growth campaigns. From high-ROAS Facebook Ads and Google Business Profile optimization to full YouTube &amp; Instagram management.
+    </p>
+
+    <!-- Side-by-side Action Buttons conforming to DESIGN.md -->
+    <div class="mt-8 flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+      <button
+        type="button"
+        data-open-audit
+        class="btn-primary w-full sm:w-[200px] text-[14px] font-medium justify-center focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none cursor-pointer"
+        aria-label="Get Started with VALENCE"
+      >
+        Get Started
+      </button>
+
+      <a
+        href="#services"
+        class="btn-secondary-dark w-full sm:w-[200px] text-[14px] font-medium justify-center focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+      >
+        Our Services
+      </a>
+    </div>
+
+    <!-- Reassurance Micro-line -->
+    <p class="mt-4 text-[13px] text-white/60 font-normal text-center">
+      Top 1% Entrepreneur &amp; Creator Growth &bull; Google Business Profile &bull; Facebook Ads &bull; Full Execution
+    </p>
+  </div>
+
+  <!-- Bottom Stat Bar anchored to hero viewport -->
+  <div class="relative z-10 w-full border-t border-white/10 bg-black/40 backdrop-blur-md py-4">
+    <div class="max-w-[1380px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
+      <div class="flex flex-col justify-center">
+        <span class="text-[19px] sm:text-[23px] md:text-[26px] font-medium text-white tracking-tight">Make You Viral</span>
+        <span class="text-[11px] sm:text-[12px] text-white/70 tracking-wide uppercase mt-0.5">On Social Media</span>
+      </div>
+      <div class="flex flex-col justify-center">
+        <span class="text-[20px] sm:text-[24px] md:text-[26px] font-medium text-white tabular-nums">100%</span>
+        <span class="text-[11px] sm:text-[12px] text-white/70 tracking-wide uppercase mt-0.5">End-to-End Management</span>
+      </div>
+      <div class="flex flex-col justify-center">
+        <span class="text-[20px] sm:text-[24px] md:text-[26px] font-medium text-white tabular-nums">Top 1%</span>
+        <span class="text-[11px] sm:text-[12px] text-white/70 tracking-wide uppercase mt-0.5">Creator &amp; Brand Focus</span>
+      </div>
+      <div class="flex flex-col justify-center">
+        <span class="text-[20px] sm:text-[24px] md:text-[26px] font-medium text-white tabular-nums">24h</span>
+        <span class="text-[11px] sm:text-[12px] text-white/70 tracking-wide uppercase mt-0.5">Rapid Onboarding</span>
+      </div>
+    </div>
+  </div>
+</section>

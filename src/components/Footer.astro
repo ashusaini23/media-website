@@ -1,0 +1,44 @@
+---
+// Footer.astro - Minimalist architectural footer conforming to DESIGN.md
+---
+
+<footer class="bg-white border-t border-[#EEEEEE] text-[#5C5E62] text-[13px] py-16">
+  <div class="max-w-[1380px] mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
+      <!-- Left Brand & Mission -->
+      <div>
+        <a href="#" class="text-[17px] font-medium tracking-[0.25em] text-[#171A20] uppercase block mb-2" aria-label="VALENCE Home">
+          V&nbsp;A&nbsp;L&nbsp;E&nbsp;N&nbsp;C&nbsp;E
+        </a>
+        <p class="text-[13px] text-[#8E8E8E] max-w-[400px]">
+          Social Media Growth and Management Expert. Scaling digital presence through creator partnerships, localization, and full channel management.
+        </p>
+      </div>
+
+      <!-- Center Links -->
+      <nav class="flex flex-wrap items-center gap-6" aria-label="Footer Navigation">
+        <a href="#services" class="hover:text-[#171A20] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">Services</a>
+        <a href="#platforms" class="hover:text-[#171A20] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">Platforms</a>
+        <a href="#about" class="hover:text-[#171A20] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">About</a>
+        <a href="#contact" class="hover:text-[#171A20] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">Contact</a>
+        <a href="mailto:contact@valence.media" class="hover:text-[#171A20] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">contact@valence.media</a>
+      </nav>
+
+      <!-- Operational Status -->
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-[4px] bg-[#F4F4F4] border border-[#EEEEEE] text-[11px] font-mono text-[#393C41]">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+        <span>Accepting Select Client Partners</span>
+      </div>
+    </div>
+
+    <!-- Bottom Legal Bar -->
+    <div class="pt-8 border-t border-[#EEEEEE] flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-[#8E8E8E]">
+      <p>&copy; {new Date().getFullYear()} VALENCE Media Inc. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="#about" class="hover:text-[#171A20] transition-colors">Terms of Service</a>
+        <a href="#about" class="hover:text-[#171A20] transition-colors">Privacy Policy</a>
+        <a href="#about" class="hover:text-[#171A20] transition-colors">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
