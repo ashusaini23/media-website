@@ -1,4 +1,4 @@
----
+﻿---
 // ThemeToggle.astro - light/dark switch. The theme class lives on <html> and is
 // applied pre-paint by Layout.astro; this button just flips and remembers it.
 interface Props {
@@ -90,7 +90,7 @@ const variantClasses =
 			try {
 				localStorage.setItem(STORAGE_KEY, isDark ? 'dark' : 'light');
 			} catch {
-				/* storage unavailable (private mode) — theme still applies for this visit */
+				/* storage unavailable (private mode) â€” theme still applies for this visit */
 			}
 		});
 	});
@@ -102,3 +102,4 @@ const variantClasses =
 		setTheme(event.matches);
 	});
 </script>
+

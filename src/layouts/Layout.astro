@@ -1,11 +1,11 @@
----
+﻿---
 interface Props {
 	title?: string;
 	description?: string;
 }
 
 const {
-	title = 'VALENCE | Social Media Growth and Management Expert',
+	title = 'GrovexMedia | Social Media Growth and Management Expert',
 	description = 'We help category-defining brands, creators, and entrepreneurs grow and manage their social media through high-impact creator partnerships and full channel management.'
 } = Astro.props;
 ---
@@ -22,14 +22,14 @@ const {
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<meta name="keywords" content="VALENCE, Social Media Growth, Influencer Partnerships, Celebrity Giveaways, Instagram Management, YouTube Management, digital media studio" />
+		<meta name="keywords" content="GrovexMedia, Social Media Growth, Influencer Partnerships, Celebrity Giveaways, Instagram Management, YouTube Management, digital media studio" />
 		<meta name="robots" content="index, follow" />
-		<link rel="canonical" href="https://valence.media" />
+		<link rel="canonical" href="https://GrovexMedia.media" />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://valence.media" />
-		<meta property="og:site_name" content="VALENCE Media" />
+		<meta property="og:url" content="https://GrovexMedia.media" />
+		<meta property="og:site_name" content="GrovexMedia Media" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content="/images/hero.jpg" />
@@ -55,3 +55,4 @@ const {
 		<slot />
 	</body>
 </html>
+
