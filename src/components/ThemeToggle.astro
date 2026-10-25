@@ -1,0 +1,104 @@
+---
+// ThemeToggle.astro - light/dark switch. The theme class lives on <html> and is
+// applied pre-paint by Layout.astro; this button just flips and remembers it.
+interface Props {
+	variant?: 'header' | 'drawer';
+	class?: string;
+}
+
+const { variant = 'header', class: className = '' } = Astro.props;
+
+const baseClasses =
+	'inline-flex items-center justify-center w-9 h-9 rounded-[4px] transition-colors duration-[330ms] ease-out focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer';
+
+const variantClasses =
+	variant === 'drawer'
+		? 'theme-toggle-drawer hover:bg-black/5 dark:hover:bg-white/10'
+		: 'theme-toggle-header hover:bg-white/10';
+---
+
+<button
+	type="button"
+	data-theme-toggle
+	aria-label="Switch to dark mode"
+	class:list={[baseClasses, variantClasses, className]}
+>
+	<!-- Shown in light mode: click to go dark -->
+	<svg
+		class="w-[18px] h-[18px] dark:hidden"
+		fill="none"
+		viewBox="0 0 24 24"
+		stroke-width="1.75"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		stroke="currentColor"
+		aria-hidden="true"
+	>
+		<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+	</svg>
+
+	<!-- Shown in dark mode: click to go light -->
+	<svg
+		class="w-[18px] h-[18px] hidden dark:block"
+		fill="none"
+		viewBox="0 0 24 24"
+		stroke-width="1.75"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		stroke="currentColor"
+		aria-hidden="true"
+	>
+		<circle cx="12" cy="12" r="4"></circle>
+		<path
+			d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+		></path>
+	</svg>
+</button>
+
+<script>
+	const STORAGE_KEY = 'theme';
+
+	function syncLabels(isDark: boolean) {
+		document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
+			btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+		});
+	}
+
+	function readStored(): string | null {
+		try {
+			return localStorage.getItem(STORAGE_KEY);
+		} catch {
+			return null;
+		}
+	}
+
+	function setTheme(isDark: boolean) {
+		document.documentElement.classList.toggle('dark', isDark);
+		document
+			.querySelector('meta[name="theme-color"]')
+			?.setAttribute('content', isDark ? '#171A20' : '#FFFFFF');
+		syncLabels(isDark);
+	}
+
+	// Reflect the theme the head script already applied.
+	syncLabels(document.documentElement.classList.contains('dark'));
+
+	document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const isDark = !document.documentElement.classList.contains('dark');
+			setTheme(isDark);
+			try {
+				localStorage.setItem(STORAGE_KEY, isDark ? 'dark' : 'light');
+			} catch {
+				/* storage unavailable (private mode) — theme still applies for this visit */
+			}
+		});
+	});
+
+	// Keep following the OS while the visitor hasn't made an explicit choice.
+	const query = window.matchMedia('(prefers-color-scheme: dark)');
+	query.addEventListener('change', (event) => {
+		if (readStored()) return;
+		setTheme(event.matches);
+	});
+</script>
