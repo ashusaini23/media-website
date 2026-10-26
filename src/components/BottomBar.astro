@@ -4,15 +4,15 @@
 
 <aside
   id="persistent-bottom-bar"
-  class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#EEEEEE] py-2.5 px-4 sm:px-8 shadow-sm transition-transform duration-[330ms]"
+  class="fixed inset-x-0 bottom-0 z-40 bg-white/95 dark:bg-[#171A20]/95 backdrop-blur-md border-t border-[#EEEEEE] dark:border-white/10 px-3 sm:px-8 py-2 sm:py-2.5 pb-[calc(0.5rem_+_env(safe-area-inset-bottom))] sm:pb-2.5 shadow-sm transition-transform duration-[330ms]"
   aria-label="Quick Question and Strategy Booking Bar"
 >
-  <div class="max-w-[1380px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+  <div class="max-w-[1380px] mx-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-3">
     <!-- Left Input / Quick Inquiry Interface -->
-    <div class="w-full sm:w-auto flex-1 max-w-[680px] flex items-center gap-2">
+    <div class="w-full sm:w-auto flex-1 min-w-0 max-w-[680px] flex items-center gap-2">
       <div class="relative w-full flex items-center">
         <!-- Chat Icon -->
-        <span class="absolute left-3.5 text-[#5C5E62] pointer-events-none" aria-hidden="true">
+        <span class="absolute left-3.5 text-[#5C5E62] dark:text-[#A3A7B0] pointer-events-none" aria-hidden="true">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
           </svg>
@@ -21,8 +21,8 @@
         <input
           id="quick-query-input"
           type="text"
-          placeholder="Ask a strategist (e.g., 'How do celebrity giveaways work?')"
-          class="w-full h-10 pl-10 pr-10 text-[13px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none sm:max-w-[680px]"
+          placeholder="Ask a strategist about your growth goals…"
+          class="w-full h-10 pl-10 pr-10 text-[13px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] dark:placeholder:text-white/35 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none sm:max-w-[680px]"
           aria-label="Ask a question about your social media growth"
         />
 
@@ -30,7 +30,7 @@
         <button
           id="send-query-btn"
           type="button"
-          class="absolute right-2 text-[#5C5E62] hover:text-[#3E6AE1] transition-colors p-1 rounded-[4px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
+          class="absolute right-1.5 flex h-8 w-8 items-center justify-center text-[#5C5E62] dark:text-[#A3A7B0] hover:text-[#3E6AE1] dark:hover:text-[#6C8FF0] transition-colors rounded-[4px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
           aria-label="Submit Question"
         >
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -42,11 +42,11 @@
     </div>
 
     <!-- Right Side CTA Group -->
-    <div class="flex items-center gap-2.5 w-full sm:w-auto justify-end">
+    <div class="flex items-center gap-2 sm:gap-2.5 w-full sm:w-auto justify-end">
       <button
         type="button"
         data-open-audit
-        class="btn-primary text-[13px] font-medium !h-9 !px-4 flex items-center gap-2 whitespace-nowrap focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
+        class="btn-primary flex-1 sm:flex-none h-10 px-4 text-[13px] font-medium flex items-center justify-center gap-2 whitespace-nowrap focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
       >
         <span class="w-2 h-2 rounded-full bg-white animate-pulse" aria-hidden="true"></span>
         Get Started Today
@@ -56,7 +56,7 @@
       <button
         id="dismiss-bar-btn"
         type="button"
-        class="hidden sm:flex text-[#8E8E8E] hover:text-[#171A20] p-1.5 rounded-[4px] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
+        class="flex h-10 w-10 shrink-0 items-center justify-center text-[#8E8E8E] dark:text-[#8E939C] hover:text-[#171A20] dark:hover:text-white rounded-[4px] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer sm:h-auto sm:w-auto sm:p-1.5"
         aria-label="Hide Bottom Bar"
       >
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -70,20 +70,22 @@
   <!-- Interactive Live Answer Tooltip / Notification -->
   <div
     id="quick-answer-box"
-    class="hidden max-w-[1380px] mx-auto mt-2 pt-2 border-t border-[#EEEEEE] text-[13px] text-[#393C41] flex items-center justify-between"
+    class="hidden absolute inset-x-3 bottom-full mb-2 z-50 rounded-[8px] border border-[#EEEEEE] dark:border-white/10 bg-white dark:bg-[#1C1F26] p-3 text-[13px] text-[#393C41] dark:text-[#C7CAD1] shadow-lg sm:inset-x-8"
     aria-live="polite"
   >
-    <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-[#3E6AE1]" aria-hidden="true"></span>
-      <span id="quick-answer-text">Based on your industry benchmarks, brands scaling with our hook testing framework achieve a median 3.6x ROAS in 60 days.</span>
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex items-start gap-2">
+        <span class="mt-1.5 w-2 h-2 shrink-0 rounded-full bg-[#3E6AE1]" aria-hidden="true"></span>
+        <span id="quick-answer-text" class="leading-[1.5]">Based on your industry benchmarks, brands scaling with our hook testing framework achieve a median 3.6x ROAS in 60 days.</span>
+      </div>
+      <button
+        id="close-answer-btn"
+        type="button"
+        class="self-end text-[#8E8E8E] dark:text-[#8E939C] hover:text-[#171A20] dark:hover:text-white text-[11px] underline px-1 py-1 sm:self-auto"
+      >
+        Dismiss
+      </button>
     </div>
-    <button
-      id="close-answer-btn"
-      type="button"
-      class="text-[#8E8E8E] hover:text-[#171A20] text-[11px] underline ml-4"
-    >
-      Dismiss
-    </button>
   </div>
 </aside>
 
@@ -130,4 +132,3 @@
     answerBox?.classList.add('hidden');
   });
 </script>
-

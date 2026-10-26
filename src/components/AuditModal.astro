@@ -4,17 +4,17 @@
 
 <div
   id="audit-modal"
-  class="fixed inset-0 z-50 hidden bg-[#171A20]/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+  class="fixed inset-0 z-50 hidden bg-[#171A20]/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto overscroll-contain"
   role="dialog"
   aria-modal="true"
   aria-labelledby="modal-title"
 >
-  <div class="relative w-full max-w-[620px] bg-white rounded-[12px] p-6 sm:p-10 text-[#171A20] shadow-2xl border border-[#EEEEEE] my-8">
+  <div class="relative w-full max-w-[620px] max-h-[calc(100dvh_-_1.5rem)] sm:max-h-[calc(100dvh_-_3rem)] overflow-y-auto overscroll-contain bg-white dark:bg-[#171A20] rounded-[12px] p-5 sm:p-8 lg:p-10 pb-[calc(1.25rem_+_env(safe-area-inset-bottom))] text-[#171A20] dark:text-[#F4F4F4] shadow-2xl border border-[#EEEEEE] dark:border-white/10 my-0 sm:my-6">
     <!-- Close button with accessible label -->
     <button
       id="close-modal-btn"
       type="button"
-      class="absolute top-5 right-5 w-8 h-8 rounded-[4px] flex items-center justify-center text-[#5C5E62] hover:text-[#171A20] hover:bg-[#F4F4F4] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none"
+      class="absolute top-3 right-3 sm:top-5 sm:right-5 w-11 h-11 sm:w-9 sm:h-9 rounded-[4px] flex items-center justify-center text-[#5C5E62] dark:text-[#A3A7B0] hover:text-[#171A20] dark:hover:text-white hover:bg-[#F4F4F4] dark:hover:bg-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none"
       aria-label="Close Audit Modal"
     >
       <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -24,14 +24,14 @@
     </button>
 
     <!-- Modal Header -->
-    <div class="mb-6">
+    <div class="mb-5 sm:mb-6 pr-8">
       <span class="text-[11px] font-medium tracking-[0.2em] text-[#3E6AE1] uppercase block mb-1">
         Growth Strategy Intake
       </span>
-      <h3 id="modal-title" class="text-[24px] sm:text-[28px] font-medium leading-[1.2] text-[#171A20]">
+      <h3 id="modal-title" class="text-[24px] sm:text-[28px] font-medium leading-[1.2] text-[#171A20] dark:text-white">
         Get Started with GrovexMedia
       </h3>
-      <p class="mt-2 text-[14px] text-[#5C5E62] leading-[1.5]">
+      <p class="mt-2 text-[14px] text-[#5C5E62] dark:text-[#A3A7B0] leading-[1.5]">
         Tell us about your brand or channel, and our lead strategists will prepare a custom growth roadmap and campaign evaluation within 24 hours.
       </p>
     </div>
@@ -41,7 +41,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <!-- Field 1: Brand / Business Name -->
         <div>
-          <label for="company-name" class="block text-[13px] font-medium text-[#171A20] mb-1">
+          <label for="company-name" class="block text-[13px] font-medium text-[#171A20] dark:text-[#E8EAEE] mb-1">
             Company or Creator Name *
           </label>
           <input
@@ -50,13 +50,13 @@
             type="text"
             required
             placeholder="e.g. Acme Corp or Studio"
-            class="w-full h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
+            class="w-full h-11 sm:h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] dark:placeholder:text-white/35 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
           />
         </div>
 
         <!-- Field 2: Website or Handle -->
         <div>
-          <label for="social-handle" class="block text-[13px] font-medium text-[#171A20] mb-1">
+          <label for="social-handle" class="block text-[13px] font-medium text-[#171A20] dark:text-[#E8EAEE] mb-1">
             Primary Social Handle or URL *
           </label>
           <input
@@ -66,7 +66,7 @@
             required
             spellcheck="false"
             placeholder="@yourbrand or youtube.com/@channel"
-            class="w-full h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
+            class="w-full h-11 sm:h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] dark:placeholder:text-white/35 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
           />
         </div>
       </div>
@@ -74,13 +74,13 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <!-- Field 3: Service of Interest -->
         <div>
-          <label for="service-interest" class="block text-[13px] font-medium text-[#171A20] mb-1">
+          <label for="service-interest" class="block text-[13px] font-medium text-[#171A20] dark:text-[#E8EAEE] mb-1">
             Primary Service Interest
           </label>
           <select
             id="service-interest"
             name="serviceInterest"
-            class="w-full h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors cursor-pointer"
+            class="w-full h-11 sm:h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors cursor-pointer"
           >
             <option value="Google Business Profile">Google Business Profile</option>
             <option value="Facebook Ads">Facebook Ads</option>
@@ -92,13 +92,13 @@
 
         <!-- Field 4: Current Audience Scale -->
         <div>
-          <label for="current-scale" class="block text-[13px] font-medium text-[#171A20] mb-1">
+          <label for="current-scale" class="block text-[13px] font-medium text-[#171A20] dark:text-[#E8EAEE] mb-1">
             Current Follower / Subscriber Scale
           </label>
           <select
             id="current-scale"
             name="currentScale"
-            class="w-full h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors cursor-pointer"
+            class="w-full h-11 sm:h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors cursor-pointer"
           >
             <option value="launch">Early Stage (&lt; 10K followers)</option>
             <option value="growth" selected>Growing (10K &ndash; 100K followers)</option>
@@ -110,7 +110,7 @@
 
       <!-- Field 5: Work Email -->
       <div>
-        <label for="work-email" class="block text-[13px] font-medium text-[#171A20] mb-1">
+        <label for="work-email" class="block text-[13px] font-medium text-[#171A20] dark:text-[#E8EAEE] mb-1">
           Direct Email Address *
         </label>
         <input
@@ -121,7 +121,7 @@
           spellcheck="false"
           autocomplete="email"
           placeholder="name@company.com"
-          class="w-full h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
+          class="w-full h-11 sm:h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] dark:placeholder:text-white/35 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
         />
       </div>
 
@@ -130,45 +130,45 @@
         <button
           id="submit-audit-btn"
           type="submit"
-          class="btn-primary w-full justify-center !h-11 text-[14px] cursor-pointer"
+          class="btn-primary w-full h-11 justify-center text-[14px] cursor-pointer"
         >
           Submit Strategy Request
         </button>
       </div>
 
-      <p class="text-center text-[11px] text-[#8E8E8E]">
+      <p class="text-center text-[11px] text-[#8E8E8E] dark:text-[#8E939C]">
         Direct response within 24 hours &bull; Strict client confidentiality guaranteed
       </p>
     </form>
 
     <!-- Simulated Diagnostic Progress State (Polite ARIA Live Region) -->
     <div id="diagnostic-progress" class="hidden py-8 text-center space-y-4" aria-live="polite">
-      <div class="w-12 h-12 border-3 border-[#EEEEEE] border-t-[#3E6AE1] rounded-full animate-spin mx-auto"></div>
-      <h4 id="progress-message" class="text-[17px] font-medium text-[#171A20]">
-        Connecting to platform API scrapersâ€¦
+      <div class="w-12 h-12 border-3 border-[#EEEEEE] dark:border-white/10 border-t-[#3E6AE1] rounded-full animate-spin mx-auto"></div>
+      <h4 id="progress-message" class="text-[17px] font-medium text-[#171A20] dark:text-white">
+        Connecting to platform API scrapers…
       </h4>
-      <p class="text-[13px] text-[#5C5E62]">
-        Auditing recent creative iterations and competitor benchmark saturationâ€¦
+      <p class="text-[13px] text-[#5C5E62] dark:text-[#A3A7B0]">
+        Auditing recent creative iterations and competitor benchmark saturation…
       </p>
     </div>
 
     <!-- Final Success Confirmation State -->
     <div id="diagnostic-success" class="hidden py-6 text-center space-y-4" aria-live="polite">
-      <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+      <div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto">
         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
       </div>
-      <h4 class="text-[20px] font-medium text-[#171A20]">
+      <h4 class="text-[20px] font-medium text-[#171A20] dark:text-white">
         Audit Dossier Queued
       </h4>
-      <p class="text-[14px] text-[#5C5E62] max-w-[420px] mx-auto">
+      <p class="text-[14px] text-[#5C5E62] dark:text-[#A3A7B0] max-w-[420px] mx-auto">
         Your preliminary performance audit is being compiled by our senior growth architects. A calendar invitation has been sent to your email.
       </p>
       <button
         id="dismiss-success-btn"
         type="button"
-        class="btn-secondary !h-9 text-[13px] px-6 mt-4"
+        class="btn-secondary h-11 sm:h-9 text-[13px] px-6 mt-4 dark:bg-[#1C1F26] dark:border-white/15 dark:text-[#F4F4F4] dark:hover:bg-white/10"
       >
         Close Window
       </button>
@@ -190,8 +190,12 @@
     if (!modal) return;
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
-    const firstInput = modal.querySelector('input') as HTMLInputElement;
-    firstInput?.focus();
+
+    // Avoid forcing the mobile keyboard open when the sheet appears.
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      const firstInput = modal.querySelector('input') as HTMLInputElement;
+      firstInput?.focus();
+    }
   }
 
   function closeModal() {
@@ -233,9 +237,9 @@
     progressBox.classList.remove('hidden');
 
     const steps = [
-      'Auditing competitor ad velocityâ€¦',
-      'Calculating creative fatigue curveâ€¦',
-      'Extracting projected ROAS upsideâ€¦'
+      'Auditing competitor ad velocity…',
+      'Calculating creative fatigue curve…',
+      'Extracting projected ROAS upside…'
     ];
 
     let stepIndex = 0;

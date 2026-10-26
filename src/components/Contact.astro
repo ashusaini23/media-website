@@ -2,66 +2,66 @@
 // Contact.astro - Contact & Inquiry Section conforming to DESIGN.md
 ---
 
-<section id="contact" class="py-24 bg-[#F4F4F4] text-[#171A20] scroll-mt-20">
-  <div class="max-w-[1380px] mx-auto px-6">
-    <div class="max-w-[760px] mb-16">
+<section id="contact" class="py-16 sm:py-20 lg:py-24 bg-[#F4F4F4] dark:bg-[#11141A] text-[#171A20] dark:text-[#F4F4F4] scroll-mt-20">
+  <div class="max-w-[1380px] mx-auto px-4 sm:px-6">
+    <div class="max-w-[760px] mb-10 sm:mb-14 lg:mb-16">
       <span class="text-[12px] font-medium tracking-[0.2em] text-[#3E6AE1] uppercase block mb-2">
         Get In Touch
       </span>
-      <h2 class="text-[32px] md:text-[42px] font-medium leading-[1.2] text-[#171A20] text-balance">
+      <h2 class="text-[28px] sm:text-[36px] lg:text-[42px] font-medium leading-[1.2] text-[#171A20] dark:text-white text-balance">
         Let's Discuss How We Can Help You Stand Out
       </h2>
-      <p class="mt-4 text-[15px] sm:text-[16px] text-[#5C5E62] leading-[1.6] text-pretty">
+      <p class="mt-4 text-[15px] sm:text-[16px] text-[#5C5E62] dark:text-[#A3A7B0] leading-[1.6] text-pretty">
         Ready to accelerate your online presence and capture genuine audience scale? Reach out directly to discuss your brand goals with our media team.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
       <!-- Left Column: Contact Cards -->
-      <div class="space-y-6">
-        <div class="p-8 rounded-[12px] bg-white border border-[#EEEEEE] space-y-6">
+      <div class="space-y-5 sm:space-y-6">
+        <div class="p-5 sm:p-8 rounded-[12px] bg-white dark:bg-[#171A20] border border-[#EEEEEE] dark:border-white/10 space-y-6">
           <div>
-            <span class="text-[12px] font-mono uppercase tracking-wider text-[#8E8E8E] block mb-1">
+            <span class="text-[12px] font-mono uppercase tracking-wider text-[#8E8E8E] dark:text-[#8E939C] block mb-1">
               Direct Strategic Channel
             </span>
             <a
               href="mailto:contact@GrovexMedia.media"
-              class="text-[18px] sm:text-[20px] font-medium text-[#171A20] hover:text-[#3E6AE1] transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none rounded-[2px]"
+              class="text-[16px] sm:text-[20px] font-medium text-[#171A20] dark:text-white break-words hover:text-[#3E6AE1] dark:hover:text-[#6C8FF0] transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none rounded-[2px]"
             >
               contact@GrovexMedia.media
             </a>
           </div>
 
-          <div class="border-t border-[#EEEEEE] pt-6 space-y-4">
+          <div class="border-t border-[#EEEEEE] dark:border-white/10 pt-6 space-y-4">
             <div class="flex items-center gap-3">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
-              <span class="text-[14px] text-[#393C41]">Guaranteed Response Within 24 Hours</span>
+              <span class="text-[14px] text-[#393C41] dark:text-[#C7CAD1]">Guaranteed Response Within 24 Hours</span>
             </div>
             <div class="flex items-center gap-3">
               <span class="w-2.5 h-2.5 rounded-full bg-[#3E6AE1]" aria-hidden="true"></span>
-              <span class="text-[14px] text-[#393C41]">Confidential Growth Audit Included</span>
+              <span class="text-[14px] text-[#393C41] dark:text-[#C7CAD1]">Confidential Growth Audit Included</span>
             </div>
             <div class="flex items-center gap-3">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#171A20]" aria-hidden="true"></span>
-              <span class="text-[14px] text-[#393C41]">White-Glove Executive Consultation</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#171A20] dark:bg-[#F4F4F4]" aria-hidden="true"></span>
+              <span class="text-[14px] text-[#393C41] dark:text-[#C7CAD1]">White-Glove Executive Consultation</span>
             </div>
           </div>
         </div>
 
         <!-- Quick Summary Note -->
-        <div class="p-6 rounded-[12px] bg-white/70 border border-[#EEEEEE] text-[13px] text-[#5C5E62] leading-[1.6]">
+        <div class="p-5 sm:p-6 rounded-[12px] bg-white/70 dark:bg-[#171A20]/70 border border-[#EEEEEE] dark:border-white/10 text-[13px] text-[#5C5E62] dark:text-[#A3A7B0] leading-[1.6]">
           Whether you want to sponsor an upcoming verified celebrity giveaway, localize your YouTube catalog into Hindi, or outsource your complete social media operations, we will map out an actionable timeline.
         </div>
       </div>
 
       <!-- Right Column: Interactive Contact Form -->
       <div>
-        <div class="p-8 sm:p-10 rounded-[12px] bg-white border border-[#EEEEEE]">
+        <div class="p-5 sm:p-8 lg:p-10 rounded-[12px] bg-white dark:bg-[#171A20] border border-[#EEEEEE] dark:border-white/10">
           <form id="contact-inquiry-form" class="space-y-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <!-- Name Input -->
               <div>
-                <label for="contact-name" class="block text-[13px] font-medium text-[#171A20] mb-1.5">
+                <label for="contact-name" class="block text-[13px] font-medium text-[#171A20] dark:text-[#E8EAEE] mb-1.5">
                   Your Name *
                 </label>
                 <input
@@ -71,13 +71,13 @@
                   required
                   autocomplete="name"
                   placeholder="e.g. Elena Vance"
-                  class="w-full h-10 px-3.5 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
+                  class="w-full h-11 sm:h-10 px-3.5 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] dark:placeholder:text-white/35 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
                 />
               </div>
 
               <!-- Email Input -->
               <div>
-                <label for="contact-email" class="block text-[13px] font-medium text-[#171A20] mb-1.5">
+                <label for="contact-email" class="block text-[13px] font-medium text-[#171A20] dark:text-[#E8EAEE] mb-1.5">
                   Business Email *
                 </label>
                 <input
@@ -88,7 +88,7 @@
                   autocomplete="email"
                   spellcheck="false"
                   placeholder="elena@company.com"
-                  class="w-full h-10 px-3.5 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
+                  class="w-full h-11 sm:h-10 px-3.5 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] dark:placeholder:text-white/35 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
                 />
               </div>
             </div>
@@ -96,7 +96,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <!-- Social Channel or URL -->
               <div>
-                <label for="contact-social" class="block text-[13px] font-medium text-[#171A20] mb-1.5">
+                <label for="contact-social" class="block text-[13px] font-medium text-[#171A20] dark:text-[#E8EAEE] mb-1.5">
                   Instagram / YouTube / Website *
                 </label>
                 <input
@@ -105,19 +105,19 @@
                   type="text"
                   required
                   placeholder="@handle or channel URL"
-                  class="w-full h-10 px-3.5 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
+                  class="w-full h-11 sm:h-10 px-3.5 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] dark:placeholder:text-white/35 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors"
                 />
               </div>
 
               <!-- Service of Interest -->
               <div>
-                <label for="contact-service" class="block text-[13px] font-medium text-[#171A20] mb-1.5">
+                <label for="contact-service" class="block text-[13px] font-medium text-[#171A20] dark:text-[#E8EAEE] mb-1.5">
                   Core Services
                 </label>
                 <select
                   id="contact-service"
                   name="service"
-                  class="w-full h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors cursor-pointer"
+                  class="w-full h-11 sm:h-10 px-3 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors cursor-pointer"
                 >
                   <option value="Google Business Profile">Google Business Profile</option>
                   <option value="Facebook Ads">Facebook Ads</option>
@@ -130,15 +130,15 @@
 
             <!-- Message Area -->
             <div>
-              <label for="contact-message" class="block text-[13px] font-medium text-[#171A20] mb-1.5">
+              <label for="contact-message" class="block text-[13px] font-medium text-[#171A20] dark:text-[#E8EAEE] mb-1.5">
                 Tell Us About Your Goals &amp; Timeline
               </label>
               <textarea
                 id="contact-message"
                 name="message"
                 rows="4"
-                placeholder="Share your current follower count, target channels, or specific campaign questionsâ€¦"
-                class="w-full p-3.5 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors resize-none"
+                placeholder="Share your current follower count, target channels, or specific campaign questions…"
+                class="w-full p-3.5 text-[14px] rounded-[4px] border border-[#EEEEEE] bg-[#F4F4F4] text-[#171A20] placeholder:text-[#8E8E8E] dark:border-white/10 dark:bg-[#0D0F14] dark:text-[#F4F4F4] dark:placeholder:text-white/35 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none transition-colors resize-none"
               ></textarea>
             </div>
 
@@ -147,17 +147,17 @@
               <button
                 type="submit"
                 id="contact-submit-btn"
-                class="btn-primary w-full sm:w-[220px] text-[14px] font-medium justify-center focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
+                class="btn-primary w-full sm:w-[220px] h-11 sm:h-10 text-[14px] font-medium justify-center focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
               >
                 Send Inquiry
               </button>
-              <span class="text-[12px] text-[#8E8E8E]">Direct response to your inbox</span>
+              <span class="text-[12px] text-[#8E8E8E] dark:text-[#8E939C]">Direct response to your inbox</span>
             </div>
 
             <!-- Success Notification State -->
             <div
               id="contact-success-msg"
-              class="hidden p-4 rounded-[4px] bg-emerald-50 border border-emerald-200 text-emerald-800 text-[13px]"
+              class="hidden p-4 rounded-[4px] bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-[13px]"
               role="status"
               aria-live="polite"
             >
@@ -180,7 +180,7 @@
     if (!submitBtn) return;
 
     const originalText = submitBtn.textContent || 'Send Inquiry';
-    submitBtn.textContent = 'Sendingâ€¦';
+    submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
 
     // Simulate reliable dispatch

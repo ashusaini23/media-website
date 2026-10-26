@@ -1,99 +1,104 @@
 ﻿---
 // Navigation.astro - Conforming to DESIGN.md navigation spec
+import ThemeToggle from './ThemeToggle.astro';
 ---
 
 <header id="site-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-[330ms] ease-out bg-transparent text-white">
-  <div class="max-w-[1380px] mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+  <div class="max-w-[1380px] mx-auto px-4 sm:px-6 h-16 lg:h-20 flex items-center justify-between gap-4">
     <!-- Brand Wordmark conforming to DESIGN.md -->
-    <a href="#" class="text-[17px] md:text-[18px] font-medium tracking-[0.22em] uppercase hover:opacity-85 transition-opacity focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none rounded-[2px]" aria-label="GrovexMedia Home">
+    <a href="#" class="shrink-0 text-[15px] sm:text-[17px] lg:text-[18px] font-medium tracking-[0.18em] sm:tracking-[0.22em] uppercase hover:opacity-85 transition-opacity focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none rounded-[2px]" aria-label="GrovexMedia Home">
       GrovexMedia
     </a>
 
-    <!-- Desktop Navigation Links -->
-    <nav class="hidden md:flex items-center gap-1.5" aria-label="Main Navigation">
-      <a href="#services" class="nav-link-dynamic text-[14px] font-medium px-4 py-1.5 rounded-[4px] transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
+    <!-- Desktop Navigation Links (tablet keeps the compact drawer) -->
+    <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1.5" aria-label="Main Navigation">
+      <a href="#services" class="nav-link-dynamic text-[14px] font-medium px-3 xl:px-4 py-2 rounded-[4px] hover:bg-white/10 transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
         Services
       </a>
-      <a href="#platforms" class="nav-link-dynamic text-[14px] font-medium px-4 py-1.5 rounded-[4px] transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
+      <a href="#platforms" class="nav-link-dynamic text-[14px] font-medium px-3 xl:px-4 py-2 rounded-[4px] hover:bg-white/10 transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
         Platforms
       </a>
-      <a href="#about" class="nav-link-dynamic text-[14px] font-medium px-4 py-1.5 rounded-[4px] transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
+      <a href="#about" class="nav-link-dynamic text-[14px] font-medium px-3 xl:px-4 py-2 rounded-[4px] hover:bg-white/10 transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
         About
       </a>
-      <a href="#contact" class="nav-link-dynamic text-[14px] font-medium px-4 py-1.5 rounded-[4px] transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
+      <a href="#contact" class="nav-link-dynamic text-[14px] font-medium px-3 xl:px-4 py-2 rounded-[4px] hover:bg-white/10 transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
         Contact
       </a>
     </nav>
 
     <!-- Header Actions -->
-    <div class="hidden md:flex items-center gap-4">
+    <div class="hidden lg:flex items-center gap-2 xl:gap-3">
       <a
         href="#contact"
-        class="text-[14px] font-medium text-white/80 hover:text-white transition-colors duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none"
+        class="text-[14px] font-medium text-current opacity-80 hover:opacity-100 transition-opacity duration-[330ms] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none"
       >
         Inquiries
       </a>
+      <ThemeToggle class="text-current" />
       <button
         type="button"
         data-open-audit
-        class="btn-primary text-[14px] font-medium !h-9 !px-5 !py-1 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
+        class="btn-primary h-9 px-5 text-[14px] font-medium focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer"
         aria-label="Get Started with GrovexMedia"
       >
         Get Started
       </button>
     </div>
 
-    <!-- Mobile Menu Button -->
-    <button
-      id="mobile-menu-toggle"
-      type="button"
-      class="md:hidden flex items-center justify-center w-10 h-10 rounded-[4px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none text-current"
-      aria-expanded="false"
-      aria-label="Toggle Navigation Menu"
-      aria-controls="mobile-menu"
-    >
-      <svg id="menu-icon-bars" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="4" y1="6" x2="20" y2="6"></line>
-        <line x1="4" y1="12" x2="20" y2="12"></line>
-        <line x1="4" y1="18" x2="20" y2="18"></line>
-      </svg>
-      <svg id="menu-icon-close" class="w-6 h-6 stroke-current hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
+    <!-- Mobile / Tablet Theme + Menu -->
+    <div class="lg:hidden flex items-center -mr-1 text-current">
+      <ThemeToggle />
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        class="flex items-center justify-center w-11 h-11 rounded-[4px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none text-current"
+        aria-expanded="false"
+        aria-label="Toggle Navigation Menu"
+        aria-controls="mobile-menu"
+      >
+        <svg id="menu-icon-bars" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 stroke-current hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- Mobile Dropdown Drawer -->
   <div
     id="mobile-menu"
-    class="md:hidden hidden bg-white/98 backdrop-blur-md border-b border-[#EEEEEE] text-[#171A20] px-6 py-6 space-y-4 shadow-sm"
+    class="lg:hidden hidden max-h-[calc(100svh_-_4rem)] overflow-y-auto overscroll-contain bg-white/98 dark:bg-[#171A20]/98 backdrop-blur-md border-b border-[#EEEEEE] dark:border-white/10 text-[#171A20] dark:text-[#F4F4F4] px-4 sm:px-6 py-5 sm:py-6 pb-[calc(1.25rem_+_env(safe-area-inset-bottom))] shadow-sm"
   >
-    <nav class="flex flex-col space-y-3" aria-label="Mobile Navigation">
-      <a href="#services" class="mobile-link text-[15px] font-medium py-2 text-[#171A20] border-b border-[#EEEEEE]/60">
+    <nav class="flex flex-col" aria-label="Mobile Navigation">
+      <a href="#services" class="mobile-link text-[15px] font-medium py-3 text-[#171A20] dark:text-[#F4F4F4] border-b border-[#EEEEEE]/60 dark:border-white/10 rounded-[2px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
         Services
       </a>
-      <a href="#platforms" class="mobile-link text-[15px] font-medium py-2 text-[#171A20] border-b border-[#EEEEEE]/60">
+      <a href="#platforms" class="mobile-link text-[15px] font-medium py-3 text-[#171A20] dark:text-[#F4F4F4] border-b border-[#EEEEEE]/60 dark:border-white/10 rounded-[2px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
         Platforms
       </a>
-      <a href="#about" class="mobile-link text-[15px] font-medium py-2 text-[#171A20] border-b border-[#EEEEEE]/60">
+      <a href="#about" class="mobile-link text-[15px] font-medium py-3 text-[#171A20] dark:text-[#F4F4F4] border-b border-[#EEEEEE]/60 dark:border-white/10 rounded-[2px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
         About
       </a>
-      <a href="#contact" class="mobile-link text-[15px] font-medium py-2 text-[#171A20] border-b border-[#EEEEEE]/60">
+      <a href="#contact" class="mobile-link text-[15px] font-medium py-3 text-[#171A20] dark:text-[#F4F4F4] border-b border-[#EEEEEE]/60 dark:border-white/10 rounded-[2px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none">
         Contact
       </a>
     </nav>
-    <div class="pt-2 flex flex-col gap-2.5">
+    <div class="pt-3 flex flex-col gap-2.5">
       <button
         type="button"
         data-open-audit
-        class="btn-primary w-full justify-center !h-10 text-[14px]"
+        class="btn-primary w-full h-11 justify-center text-[14px] focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none"
       >
         Get Started
       </button>
       <a
         href="#contact"
-        class="btn-secondary w-full justify-center !h-10 text-[14px] text-center"
+        class="btn-secondary w-full h-11 justify-center text-[14px] text-center dark:bg-[#1C1F26] dark:border-white/15 dark:text-[#F4F4F4] dark:hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none"
       >
         Direct Consultation
       </a>
@@ -117,17 +122,35 @@
     if (scrollY > 50 && !isScrolled) {
       isScrolled = true;
       header?.classList.remove('bg-transparent', 'text-white');
-      header?.classList.add('bg-white/85', 'backdrop-blur-md', 'text-[#171A20]', 'border-b', 'border-[#EEEEEE]');
+      header?.classList.add(
+        'bg-white/85',
+        'backdrop-blur-md',
+        'text-[#171A20]',
+        'border-b',
+        'border-[#EEEEEE]',
+        'dark:bg-[#171A20]/90',
+        'dark:text-white',
+        'dark:border-white/10'
+      );
       dynamicLinks.forEach(link => {
         link.classList.remove('hover:bg-white/10');
-        link.classList.add('hover:bg-black/5');
+        link.classList.add('hover:bg-black/5', 'dark:hover:bg-white/10');
       });
     } else if (scrollY <= 50 && isScrolled) {
       isScrolled = false;
-      header?.classList.remove('bg-white/85', 'backdrop-blur-md', 'text-[#171A20]', 'border-b', 'border-[#EEEEEE]');
+      header?.classList.remove(
+        'bg-white/85',
+        'backdrop-blur-md',
+        'text-[#171A20]',
+        'border-b',
+        'border-[#EEEEEE]',
+        'dark:bg-[#171A20]/90',
+        'dark:text-white',
+        'dark:border-white/10'
+      );
       header?.classList.add('bg-transparent', 'text-white');
       dynamicLinks.forEach(link => {
-        link.classList.remove('hover:bg-black/5');
+        link.classList.remove('hover:bg-black/5', 'dark:hover:bg-white/10');
         link.classList.add('hover:bg-white/10');
       });
     }
@@ -136,21 +159,37 @@
   window.addEventListener('scroll', updateNavStyle, { passive: true });
   updateNavStyle();
 
+  function closeMobileMenu() {
+    mobileToggle?.setAttribute('aria-expanded', 'false');
+    mobileMenu?.classList.add('hidden');
+    menuIconBars?.classList.remove('hidden');
+    menuIconClose?.classList.add('hidden');
+  }
+
   mobileToggle?.addEventListener('click', () => {
     const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-    mobileToggle.setAttribute('aria-expanded', String(!isExpanded));
-    mobileMenu?.classList.toggle('hidden');
-    menuIconBars?.classList.toggle('hidden');
-    menuIconClose?.classList.toggle('hidden');
+    if (isExpanded) {
+      closeMobileMenu();
+      return;
+    }
+
+    mobileToggle.setAttribute('aria-expanded', 'true');
+    mobileMenu?.classList.remove('hidden');
+    menuIconBars?.classList.add('hidden');
+    menuIconClose?.classList.remove('hidden');
   });
 
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.add('hidden');
-      menuIconBars?.classList.remove('hidden');
-      menuIconClose?.classList.add('hidden');
-      mobileToggle?.setAttribute('aria-expanded', 'false');
-    });
+  mobileMenu?.querySelectorAll('a, [data-open-audit]').forEach(element => {
+    element.addEventListener('click', closeMobileMenu);
+  });
+
+  // Close the compact menu when the viewport reaches desktop width.
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) closeMobileMenu();
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMobileMenu();
   });
 </script>
 

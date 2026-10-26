@@ -9,18 +9,19 @@ interface Props {
 const { variant = 'header', class: className = '' } = Astro.props;
 
 const baseClasses =
-	'inline-flex items-center justify-center w-9 h-9 rounded-[4px] transition-colors duration-[330ms] ease-out focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer';
+	'inline-flex items-center justify-center w-11 h-11 lg:w-9 lg:h-9 rounded-[4px] transition-colors duration-[330ms] ease-out focus-visible:ring-2 focus-visible:ring-[#3E6AE1] focus-visible:outline-none cursor-pointer';
 
 const variantClasses =
 	variant === 'drawer'
 		? 'theme-toggle-drawer hover:bg-black/5 dark:hover:bg-white/10'
-		: 'theme-toggle-header hover:bg-white/10';
+		: 'theme-toggle-header hover:bg-[#3E6AE1]/15';
 ---
 
 <button
 	type="button"
 	data-theme-toggle
 	aria-label="Switch to dark mode"
+	aria-pressed="false"
 	class:list={[baseClasses, variantClasses, className]}
 >
 	<!-- Shown in light mode: click to go dark -->
@@ -61,6 +62,7 @@ const variantClasses =
 	function syncLabels(isDark: boolean) {
 		document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
 			btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+			btn.setAttribute('aria-pressed', String(isDark));
 		});
 	}
 
@@ -74,9 +76,10 @@ const variantClasses =
 
 	function setTheme(isDark: boolean) {
 		document.documentElement.classList.toggle('dark', isDark);
+		document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
 		document
 			.querySelector('meta[name="theme-color"]')
-			?.setAttribute('content', isDark ? '#171A20' : '#FFFFFF');
+			?.setAttribute('content', isDark ? '#0D0F14' : '#FFFFFF');
 		syncLabels(isDark);
 	}
 
@@ -90,7 +93,7 @@ const variantClasses =
 			try {
 				localStorage.setItem(STORAGE_KEY, isDark ? 'dark' : 'light');
 			} catch {
-				/* storage unavailable (private mode) â€” theme still applies for this visit */
+				/* storage unavailable (private mode) — theme still applies for this visit */
 			}
 		});
 	});

@@ -2,42 +2,42 @@
 // Footer.astro - Minimalist architectural footer conforming to DESIGN.md
 ---
 
-<footer class="bg-white border-t border-[#EEEEEE] text-[#5C5E62] text-[13px] py-16">
-  <div class="max-w-[1380px] mx-auto px-6">
-    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
+<footer class="bg-white dark:bg-[#0D0F14] border-t border-[#EEEEEE] dark:border-white/10 text-[#5C5E62] dark:text-[#A3A7B0] text-[13px] py-12 sm:py-16">
+  <div class="max-w-[1380px] mx-auto px-4 sm:px-6">
+    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-8 mb-10 sm:mb-12">
       <!-- Left Brand & Mission -->
       <div>
-        <a href="#" class="text-[17px] font-medium tracking-[0.25em] text-[#171A20] uppercase block mb-2" aria-label="GrovexMedia Home">
+        <a href="#" class="text-[17px] font-medium tracking-[0.25em] text-[#171A20] dark:text-white uppercase block mb-2" aria-label="GrovexMedia Home">
           GrovexMedia
         </a>
-        <p class="text-[13px] text-[#8E8E8E] max-w-[400px]">
+        <p class="text-[13px] text-[#8E8E8E] dark:text-[#8E939C] max-w-[400px]">
           Social Media Growth and Management Expert. Scaling digital presence through creator partnerships, localization, and full channel management.
         </p>
       </div>
 
       <!-- Center Links -->
-      <nav class="flex flex-wrap items-center gap-6" aria-label="Footer Navigation">
-        <a href="#services" class="hover:text-[#171A20] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">Services</a>
-        <a href="#platforms" class="hover:text-[#171A20] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">Platforms</a>
-        <a href="#about" class="hover:text-[#171A20] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">About</a>
-        <a href="#contact" class="hover:text-[#171A20] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">Contact</a>
-        <a href="mailto:contact@GrovexMedia.media" class="hover:text-[#171A20] transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">contact@GrovexMedia.media</a>
+      <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 sm:gap-6" aria-label="Footer Navigation">
+        <a href="#services" class="hover:text-[#171A20] dark:hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">Services</a>
+        <a href="#platforms" class="hover:text-[#171A20] dark:hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">Platforms</a>
+        <a href="#about" class="hover:text-[#171A20] dark:hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">About</a>
+        <a href="#contact" class="hover:text-[#171A20] dark:hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">Contact</a>
+        <a href="mailto:contact@GrovexMedia.media" class="hover:text-[#171A20] dark:hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#3E6AE1]">contact@GrovexMedia.media</a>
       </nav>
 
       <!-- Operational Status -->
-      <div class="flex items-center gap-2 px-3 py-1.5 rounded-[4px] bg-[#F4F4F4] border border-[#EEEEEE] text-[11px] font-mono text-[#393C41]">
+      <div class="flex items-center gap-2 px-3 py-2 sm:py-1.5 rounded-[4px] bg-[#F4F4F4] dark:bg-[#171A20] border border-[#EEEEEE] dark:border-white/10 text-[11px] font-mono text-[#393C41] dark:text-[#C7CAD1]">
         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
         <span>Accepting Select Client Partners</span>
       </div>
     </div>
 
     <!-- Bottom Legal Bar -->
-    <div class="pt-8 border-t border-[#EEEEEE] flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-[#8E8E8E]">
+    <div class="pt-6 sm:pt-8 border-t border-[#EEEEEE] dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[12px] text-[#8E8E8E] dark:text-[#8E939C]">
       <p>&copy; {new Date().getFullYear()} GrovexMedia Media Inc. All rights reserved.</p>
-      <div class="flex items-center gap-6">
-        <a href="#about" class="hover:text-[#171A20] transition-colors">Terms of Service</a>
-        <a href="#about" class="hover:text-[#171A20] transition-colors">Privacy Policy</a>
-        <a href="#about" class="hover:text-[#171A20] transition-colors">Refund Policy</a>
+      <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:gap-6">
+        <a href="#about" class="hover:text-[#171A20] dark:hover:text-white transition-colors">Terms of Service</a>
+        <a href="#about" class="hover:text-[#171A20] dark:hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#about" class="hover:text-[#171A20] dark:hover:text-white transition-colors">Refund Policy</a>
       </div>
     </div>
   </div>
